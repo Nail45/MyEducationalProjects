@@ -1,0 +1,694 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+svg,
+img {
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:root {
+  --black: #000000;
+  --black-2: #181515;
+  --brown: #ad2d11;
+  --yellow: #faca47;
+  --color-fon: #fdfaf4;
+  --white: #ffffff;
+}
+
+/* prata-regular - cyrillic */
+@font-face {
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Prata";
+  font-weight: 400;
+  font-style: normal;
+
+  font-display: swap;
+  src: url("../fonts/prata-v18-cyrillic-regular.woff2") format("woff2"),
+    /* Chrome 36+, Opera 23+, Firefox 39+ */
+    url("../fonts/prata-v18-cyrillic-regular.woff") format("woff");
+  /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* raleway-300 - cyrillic */
+@font-face {
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Raleway";
+  font-weight: 300;
+  font-style: normal;
+
+  font-display: swap;
+  src: url("../fonts/raleway-v28-cyrillic-300.woff2") format("woff2"),
+    /* Chrome 36+, Opera 23+, Firefox 39+ */
+    url("../fonts/raleway-v28-cyrillic-300.woff") format("woff");
+  /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* raleway-regular - cyrillic */
+@font-face {
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Raleway";
+  font-weight: 400;
+  font-style: normal;
+
+  font-display: swap;
+  src: url("../fonts/raleway-v28-cyrillic-regular.woff2") format("woff2"),
+    /* Chrome 36+, Opera 23+, Firefox 39+ */
+    url("../fonts/raleway-v28-cyrillic-regular.woff") format("woff");
+  /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* raleway-500 - cyrillic */
+@font-face {
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Raleway";
+  font-weight: 500;
+  font-style: normal;
+
+  font-display: swap;
+  src: url("../fonts/raleway-v28-cyrillic-500.woff2") format("woff2"),
+    /* Chrome 36+, Opera 23+, Firefox 39+ */
+    url("../fonts/raleway-v28-cyrillic-500.woff") format("woff");
+  /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+body {
+  min-width: 320px;
+  font-family: "Prata", "Raleway", "san-serif";
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--black);
+  background-color: var(--color-fon);
+}
+
+.container {
+  max-width: 1366px;
+  margin: 0 auto;
+  padding-right: 95px;
+  padding-left: 95px;
+}
+
+.list-reset {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+  font-family: "Raleway";
+}
+
+.section-title {
+  margin: 0;
+  font-size: 32px;
+  line-height: 43px;
+  color: var(--brown);
+}
+
+p {
+  margin: 0;
+}
+
+/* Header */
+
+.header {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+.nav {
+  width: 83%;
+  margin: 0 auto;
+}
+
+.nav__list {
+  display: flex;
+  justify-content: center;
+  padding-top: 32px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid var(--black);
+}
+
+.nav__list-item:not(:last-child) {
+  margin-right: 64px;
+}
+
+.nav__list-link {
+  outline: none;
+  transition: color .2s ease-in-out, outline .2s ease-in-out;
+}
+
+.nav__list-link:focus-visible:not(:hover):not(:active) {
+  outline: 1px solid var(--brown);
+  outline-offset: 3px;
+}
+
+@media(any-hover:hover) {
+  .nav__list-link:hover {
+    color: var(--brown);
+  }
+}
+
+.nav__list-link:active {
+  color: var(--yellow);
+}
+
+/* Hero */
+
+.hero {
+  position: relative;
+  padding-top: 300px;
+  padding-bottom: 335px;
+  background: url(../img/hero-pic.jpg);
+  background-position: bottom;
+  background-size: cover;
+}
+
+.hero .hero__pic {
+  position: absolute;
+  top: -77px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.container {
+  position: relative;
+}
+
+.hero__content {
+  text-align: center;
+}
+
+.hero__title {
+  margin-bottom: 5px;
+  font-size: 48px;
+  line-height: 65px;
+}
+
+.hero__descr {
+  margin: 0;
+  font-family: "Raleway";
+  font-size: 24px;
+  line-height: 28px;
+}
+
+/* about */
+
+.about {
+  position: relative;
+  overflow: hidden;
+  padding-top: 200px;
+  padding-bottom: 60px;
+}
+
+.about__title {
+  margin-bottom: 57px;
+}
+
+.slider {
+  display: flex;
+  width: 100%;
+}
+
+.about__img-wrap {
+  width: 56%;
+  margin-right: 130px;
+}
+
+.slider-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper {
+  padding-bottom: 124px;
+}
+
+.about__content-swiper {
+  position: relative;
+}
+
+.swiper-slider {
+  position: relative;
+}
+
+
+.swiper-descr {
+  width: 360px;
+  font-family: "Raleway";
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  display: none;
+}
+
+.swiper-btn-wrap {
+  display: flex;
+  gap: 3px;
+  position: absolute;
+  width: calc(100% - 56% - 124px);
+  right: 0;
+  bottom: 225px;
+  z-index: 2;
+}
+
+.btn {
+  width: 94px;
+  height: 76px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+.swiper-svg {
+  stroke: var(--brown);
+}
+
+.swiper-button-prev {
+  transform: rotate(180deg);
+}
+
+.btn:focus-visible:not(:hover):not(:active) .swiper-svg {
+  transition: fill .2s ease-in-out, stroke .2s ease-in-out;
+
+  fill: var(--brown);
+  stroke: var(--white);
+}
+
+@media(any-hover: hover) {
+  .btn:hover .swiper-svg {
+    transition: stroke .2s ease-in-out;
+
+    stroke: var(--yellow);
+  }
+}
+
+.btn:active .swiper-svg {
+  transition: stroke .2s ease-in-out;
+
+  stroke: var(--black);
+}
+
+.about__intro {
+  background-color: var(--white);
+}
+
+.about__content {
+  width: calc(1114 / 1250 * 100%);
+  padding-top: 191px;
+  padding-bottom: 220px;
+}
+
+.about__content::before {
+  content: "";
+  position: absolute;
+  width: 175px;
+  height: 267px;
+  top: 50px;
+  right: 1px;
+  bottom: 1px;
+  left: 1010px;
+  background-image: url("../img/petr1-about.png");
+  background-repeat: no-repeat;
+}
+
+.about__content::after {
+  content: "";
+  position: absolute;
+  top: 226px;
+  width: 240px;
+  height: 316px;
+  right: 1px;
+  bottom: 1px;
+  left: 175px;
+  background-image: url("../img/vasa-about.png");
+  background-repeat: no-repeat;
+}
+
+.about__content-descr {
+  font-size: 32px;
+  line-height: 54px;
+}
+
+/* history */
+
+.history {
+  padding-top: 68px;
+  padding-bottom: 200px;
+}
+
+.history__title {
+  margin-bottom: 24px;
+}
+
+.history-list {
+  padding-right: 100px;
+  padding-left: 100px;
+  counter-reset: number 0;
+}
+
+.history-list__item {
+  position: relative;
+  display: flex;
+  counter-increment: number 1;
+}
+
+.history-list__card::before {
+  content: counter(number);
+  position: absolute;
+  top: 100px;
+  left: 469px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-family: "Prata";
+  font-size: 18px;
+  line-height: 18px;
+  color: var(--white);
+  background-color: var(--yellow);
+}
+
+.history-list__item:first-child {
+  margin-bottom: -4px;
+}
+
+.history-list__item:nth-child(2),
+.history-list__item:nth-child(3),
+.history-list__item:nth-child(4),
+.history-list__item:nth-child(5),
+.history-list__item:nth-child(6),
+.history-list__item:nth-child(7) {
+  margin-bottom: -6px;
+}
+
+.history-list__item:nth-last-child(2) {
+  margin-bottom: -20px;
+}
+
+.history-list__item:nth-child(odd) {
+  justify-content: flex-end;
+}
+
+.history-list__item:nth-child(odd)::after {
+  content: "";
+  position: absolute;
+  top: 118px;
+  right: 174px;
+  width: 293px;
+  height: 2px;
+  background-color: var(--yellow);
+}
+
+.history-list__item:nth-child(odd):not(:last-child):before {
+  content: "";
+  position: absolute;
+  top: 137px;
+  right: 487px;
+  width: 2px;
+  height: 165px;
+  background-color: var(--yellow);
+}
+
+.history-list__item:nth-child(even)::after {
+  content: "";
+  position: absolute;
+  top: 118px;
+  left: 175px;
+  width: 293px;
+  height: 2px;
+  background-color: var(--yellow);
+}
+
+.history-list__item:nth-child(even)::before {
+  content: "";
+  position: absolute;
+  top: 139px;
+  left: 487px;
+  width: 2px;
+  height: 165px;
+  background-color: var(--yellow);
+}
+
+.history-list__card {
+  display: flex;
+  padding-top: 30px;
+}
+
+.history-list__content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 250px;
+  margin-right: 20px;
+  margin-left: 22px;
+  padding-top: 30px;
+}
+
+.history-list__content--second,
+.history-list__content--third,
+.history-list__content--fourth,
+.history-list__content--fifth,
+.history-list__content--seventh,
+.history-list__content--eighth,
+.history-list__content--ninth {
+  padding-top: 53px;
+}
+
+.history-list__card--right {
+  flex-direction: row-reverse;
+}
+
+.history-list__content-date {
+  margin: 0;
+  margin-bottom: 25px;
+  font-family: "Prata";
+  font-weight: 400;
+  line-height: 24px;
+  text-align: center;
+}
+
+.history-list__content-date--column {
+  width: 180px;
+  width: -moz-available;
+}
+
+.history-list__content-event {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 22px;
+  text-align: center;
+}
+
+.history-list__content-event {
+  width: 270px;
+}
+
+.content-event-small {
+  width: 184px;
+}
+
+/* sight */
+
+.sight {
+  padding-top: 124px;
+  padding-bottom: 73px;
+  background-color: var(--white);
+}
+
+.sight__title {
+  margin-bottom: 157px;
+}
+
+.sight__wrap {
+  display: flex;
+  justify-content: right;
+  margin-bottom: 180px;
+}
+
+.sight__descr {
+  width: 676px;
+  font-family: "Raleway";
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.sight-list__item {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 73px;
+  padding-bottom: 102px;
+  border-bottom: 1px solid var(--yellow);
+}
+
+.sight-list__item:first-child {
+  border-top: 1px solid var(--yellow);
+}
+
+.sight-list__item:last-child {
+  border: none;
+}
+
+.sight-list__item-title {
+  font-family: "Prata";
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+  color: var(--black);
+}
+
+.sight-list__content {
+  display: flex;
+}
+
+.sight-list__item-img {
+  margin-right: 24px;
+}
+
+.sight-list__item-descr {
+  width: 476px;
+  margin-top: -3px;
+  line-height: 26px;
+}
+
+/* budget */
+
+.budget {
+  padding-top: 128px;
+  padding-bottom: 130px;
+}
+
+.budget__title {
+  margin-bottom: 57px;
+}
+
+.budget__wrap {
+  display: flex;
+  justify-content: right;
+  margin-bottom: 240px;
+}
+
+.budget__wrap-descr {
+  width: 676px;
+  font-family: "Raleway";
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.budget-list {
+  display: flex;
+  padding-right: 95px;
+  padding-left: 83px;
+}
+
+.budget-list__item {
+  text-align: center;
+}
+
+.budget-list__item:not(:last-child) {
+  margin-right: 138px;
+}
+
+.budget-list__item:nth-child(3) {
+  margin-right: 200px;
+}
+
+.budget-list__svg {
+  margin-bottom: 32px;
+}
+
+.budget-list__name {
+  margin-bottom: 17px;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 26px;
+}
+
+.budget-list__price {
+  font-family: "Prata";
+  font-size: 22px;
+  line-height: 26px;
+}
+
+/* map */
+
+.map {
+  padding-top: 129px;
+}
+
+.map__title {
+  margin-bottom: 55px;
+}
+
+.map-sp {
+  height: 478px;
+}
+
+/* footer */
+
+.footer {
+  background-color: var(--black-2);
+}
+
+.footer-wrap {
+  display: flex;
+  min-height: 200px;
+}
+
+.footer-politic {
+  display: flex;
+  align-items: flex-end;
+  margin-right: auto;
+  margin-bottom: 24px;
+  font-family: "Raleway";
+  font-size: 12px;
+  line-height: 14px;
+  color: var(--white);
+}
+
+.footer-politic__year {
+  margin-right: 57px;
+}
+
+.footer-menu__list {
+  padding-top: 48px;
+  padding-right: 83px;
+  color: var(--white);
+
+  column-count: 2;
+  column-gap: 108px;
+}
+
+.footer-menu__list-item:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+@media(any-hover: hover) {
+  .footer-menu__list-link:hover {
+    color: var(--yellow);
+    transition: color .2s ease-in-out;
+  }
+}
+
+.footer-menu__list-link:active {
+  color: var(--brown);
+  transition: color .2s ease-in-out;
+}
