@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRM Система</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/choices.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/media.css">
+  <script defer src="js/bundle.min.js"></script>
+  <script defer src="js/choices.min.js"></script>
+  <script defer src="js/inputmask.min.js"></script>
+  <script defer src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+  <script defer src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+  <script defer src="js/main.js"></script>
+  <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/faviconandroid-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="manifest" href="favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header__content">
+        <img class="header__logo" src="img/Logo.svg" alt="Логотип">
+        <form autocomplete="off" action="#" id="filter__form" class="filter__form">
+          <div class="autocomplete">
+            <input class="header__request form-control" type="search" placeholder="Введите запрос">
+          </div>
+        </form>
+      </div>
+    </div>
+  </header>
+  <main class="main">
+    <section class="clients">
+      <div class="container">
+        <h1 class="clients__title">Клиенты</h1>
+        <!-- Модальное окно -->
+        <div class="modal fade" id="modalAddClient">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title">Новый клиент</h1>
+                <button type="button" class="btn-close btn-close-new" data-bs-dismiss="modal"
+                  aria-label="Закрыть"></button>
+              </div>
+              <form action="#" id="add__form">
+                <div class="modal-body">
+                  <label class="add-client__last-name-label">
+                    <span class="error-last-name">Введите фамилию клиента</span>
+                    <span class="had-fio had-last-name">Фамилия</span>
+                    <input class="add-client__last-name form-control" type="text" placeholder="Фамилия">
+                    <span class="blue-star-last-name">*</span>
+                  </label>
+                  <label class="add-client__name-label">
+                    <span class="error-name">Введите имя клиента</span>
+                    <span class="had-fio had-name">Имя</span>
+                    <input class="add-client__name form-control" type="text" placeholder="Имя">
+                    <span class="blue-star-name">*</span>
+                  </label>
+                  <span class="had-fio had-middle-name">Отчество</span>
+                  <input class="add-client__middle-name form-control" type="text" placeholder="Отчество">
+                </div>
+                <div class="btn-add-client-wrap">
+                  <div class="fon"></div>
+                  <div class="select-wrap-all">
+                  </div>
+                  <button type="button" class="btn btn-add-contact">
+                    <svg class="btn-add-contact-svg" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <g clip-path="url(#clip0_121_884)">
+                        <path
+                          d="M8.00001 4.66659C7.63334 4.66659 7.33334 4.96659 7.33334 5.33325V7.33325H5.33334C4.96668 7.33325 4.66668 7.63325 4.66668 7.99992C4.66668 8.36659 4.96668 8.66659 5.33334 8.66659H7.33334V10.6666C7.33334 11.0333 7.63334 11.3333 8.00001 11.3333C8.36668 11.3333 8.66668 11.0333 8.66668 10.6666V8.66659H10.6667C11.0333 8.66659 11.3333 8.36659 11.3333 7.99992C11.3333 7.63325 11.0333 7.33325 10.6667 7.33325H8.66668V5.33325C8.66668 4.96659 8.36668 4.66659 8.00001 4.66659ZM8.00001 1.33325C4.32001 1.33325 1.33334 4.31992 1.33334 7.99992C1.33334 11.6799 4.32001 14.6666 8.00001 14.6666C11.68 14.6666 14.6667 11.6799 14.6667 7.99992C14.6667 4.31992 11.68 1.33325 8.00001 1.33325ZM8.00001 13.3333C5.06001 13.3333 2.66668 10.9399 2.66668 7.99992C2.66668 5.05992 5.06001 2.66659 8.00001 2.66659C10.94 2.66659 13.3333 5.05992 13.3333 7.99992C13.3333 10.9399 10.94 13.3333 8.00001 13.3333Z"
+                          fill="currentcolor" />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_121_884">
+                          <rect width="16" height="16" fill="white" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    Добавить контакт
+                  </button>
+                </div>
+                <div class="modal-footer">
+                  <button type="submit" class="btn btn-save">
+                    <div class="spinner-border spinner-border-sm load-save" role="status">
+                      <span class="visually-hidden">Загрузка...</span>
+                    </div>
+                    Сохранить
+                  </button>
+                  <button type="button" class="btn btn__cansel-close" data-bs-dismiss="modal">Отмена</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="modalChangedClient">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header modal__changed-header">
+                <h1 class="modal-title modal__changed-title">Изменить данные</h1>
+                <span class="modal-id"></span>
+                <button class="btn-copy">
+                  <svg class="btn-copy-start" width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M13.803 5.33333C13.803 3.49238 15.3022 2 17.1515 2C19.0008 2 20.5 3.49238 20.5 5.33333C20.5 7.17428 19.0008 8.66667 17.1515 8.66667C16.2177 8.66667 15.3738 8.28596 14.7671 7.67347L10.1317 10.8295C10.1745 11.0425 10.197 11.2625 10.197 11.4872C10.197 11.9322 10.109 12.3576 9.94959 12.7464L15.0323 16.0858C15.6092 15.6161 16.3473 15.3333 17.1515 15.3333C19.0008 15.3333 20.5 16.8257 20.5 18.6667C20.5 20.5076 19.0008 22 17.1515 22C15.3022 22 13.803 20.5076 13.803 18.6667C13.803 18.1845 13.9062 17.7255 14.0917 17.3111L9.05007 13.9987C8.46196 14.5098 7.6916 14.8205 6.84848 14.8205C4.99917 14.8205 3.5 13.3281 3.5 11.4872C3.5 9.64623 4.99917 8.15385 6.84848 8.15385C7.9119 8.15385 8.85853 8.64725 9.47145 9.41518L13.9639 6.35642C13.8594 6.03359 13.803 5.6896 13.803 5.33333Z"
+                      fill="#1C274C" />
+                  </svg>
+                  <span class="btn-copy-ready">Скопировано</span>
+                </button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+              </div>
+              <form action="#" id="changed__form">
+                <div class="modal-body">
+                  <label class="add-client__last-name-label">
+                    <span class="had-fio-changed had-last-name-changed">Фамилия</span>
+                    <input class="add-client__last-name-changed fio-changed form-control" type="text"
+                      placeholder="Фамилия">
+                    <span class="blue-star-last-name-changed">*</span>
+                  </label>
+                  <label class="add-client__name-label">
+                    <span class="had-fio-changed had-name-changed">Имя</span>
+                    <input class="add-client__name-changed fio-changed form-control" type="text" placeholder="Имя">
+                    <span class="blue-star-name-changed">*</span>
+                  </label>
+                  <label class="add-client__middle-name-label">
+                    <span class="had-fio-changed had-middle-name-changed">Отчество</span>
+                    <input class="add-client__middle-name-changed fio-changed form-control" type="text"
+                      placeholder="Отчество">
+                  </label>
+                </div>
+                <div class="btn-add-client-wrap">
+                  <div class="fon"></div>
+                  <div class="select-wrap-all-changed">
+                  </div>
+                  <button type="button" class="btn btn-add-contact btn-add-contact-changed">
+                    <svg class="btn-add-contact-svg" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <g clip-path="url(#clip0_121_884)">
+                        <path
+                          d="M8.00001 4.66659C7.63334 4.66659 7.33334 4.96659 7.33334 5.33325V7.33325H5.33334C4.96668 7.33325 4.66668 7.63325 4.66668 7.99992C4.66668 8.36659 4.96668 8.66659 5.33334 8.66659H7.33334V10.6666C7.33334 11.0333 7.63334 11.3333 8.00001 11.3333C8.36668 11.3333 8.66668 11.0333 8.66668 10.6666V8.66659H10.6667C11.0333 8.66659 11.3333 8.36659 11.3333 7.99992C11.3333 7.63325 11.0333 7.33325 10.6667 7.33325H8.66668V5.33325C8.66668 4.96659 8.36668 4.66659 8.00001 4.66659ZM8.00001 1.33325C4.32001 1.33325 1.33334 4.31992 1.33334 7.99992C1.33334 11.6799 4.32001 14.6666 8.00001 14.6666C11.68 14.6666 14.6667 11.6799 14.6667 7.99992C14.6667 4.31992 11.68 1.33325 8.00001 1.33325ZM8.00001 13.3333C5.06001 13.3333 2.66668 10.9399 2.66668 7.99992C2.66668 5.05992 5.06001 2.66659 8.00001 2.66659C10.94 2.66659 13.3333 5.05992 13.3333 7.99992C13.3333 10.9399 10.94 13.3333 8.00001 13.3333Z"
+                          fill="currentcolor" />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_121_884">
+                          <rect width="16" height="16" fill="white" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    Добавить контакт
+                  </button>
+                </div>
+                <div class="modal-footer modal__changed-footer">
+                  <button type="submit" class="btn btn__changed-save">
+                    <div class="spinner-border spinner-border-sm load-save-changed" role="status">
+                      <span class="visually-hidden">Загрузка...</span>
+                    </div>
+                    Сохранить
+                  </button>
+                  <button type="button" class="btn btn__changed-remove">Удалить клиента</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="modal modal__del" id="modalDeleteClient">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header modal__del-header">
+                <h2 class="modal-title modal__del-title">Удалить клиента</h2>
+              </div>
+              <div class="modal-body modal__del-body">
+                <button type="button" class="btn-close btn__del-close--cross" data-bs-dismiss="modal"
+                  aria-label="Закрыть"></button>
+                <p class="modal-body__descr">
+                  Вы действительно хотите удалить данного клиента?
+                </p>
+              </div>
+              <div class="modal-footer modal__del-footer">
+                <button id="btn btn__del-remove" type="button" class="btn btn__del-remove">Удалить</button>
+                <button type="button" class="btn btn__cansel-close" data-bs-dismiss="modal">Отмена</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="app" id="app">
+          <div class="d-flex justify-content-center">
+            <div class="spinner-border load" role="status">
+              <span class="visually-hidden">Загрузка...</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    </button>
+  </main>
+
+</body>
+
+</html>

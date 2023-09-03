@@ -1,0 +1,57 @@
+@media (max-width: 940px) {
+
+  .client__th-time-create,
+  .client__th-time-changed {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .client-Contacts-Wrap {
+    margin-right: 20px;
+  }
+
+  .client__action {
+    flex-direction: column;
+  }
+
+  .btn-fixed {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 576px) {
+
+  .header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  .header__content {
+    text-align: center;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  .header__logo {
+    width: 24px;
+    height: 24px;
+  }
+
+  .filter__form {
+    display: none;
+  }
+
+  .choices__inner {
+    width: 100px;
+  }
+
+  .btn-add-client-wrap {
+    padding: 25px 15px;
+  }
+
+  .select__contact-value {
+    width: 140px;
+  }
+}
