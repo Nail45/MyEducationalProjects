@@ -655,7 +655,7 @@
         clientfixed.classList.add('firm-load');
         clientfixed.classList.remove('default-svg-firm');
       }
-      const res = await fetch(`${SERVER_URL} /${id}`, {
+      const res = await fetch(`${SERVER_URL}/${id}`, {
         method: 'PATCH',
         headers: {
           'Content-type': 'application/json'
