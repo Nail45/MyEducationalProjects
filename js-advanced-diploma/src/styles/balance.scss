@@ -1,0 +1,114 @@
+@import '../styles/_variables.scss';
+@import '../styles/_mixin.scss';
+
+.about-balance-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.balance-card.drag-on {
+  .balance-dynamic,
+  .content-wrapper {
+    border-radius: 50px;
+    outline: 1px dashed $grey107;
+    outline-offset: 3px;
+    cursor: grab;
+  }
+}
+
+.balance-dynamic {
+  width: 100%;
+  padding: 26px 60px 19px;
+}
+
+.transfer-table-balance {
+  margin-bottom: 50px;
+}
+
+.table-pagination-wrapper {
+  justify-content: center;
+
+  button {
+    padding: 10px;
+    background-color: $grey107;
+  }
+}
+
+.example-wrapper {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px 0;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px 0;
+}
+
+.table-pagination-wrapper .pagination-placeholder {
+  padding: 10px;
+  color: $black;
+}
+
+.div-row {
+  display: flex;
+  gap: 0 30px;
+}
+
+.div-pagination-wrapper {
+  background-color: $black218;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.div-pagination-wrapper {
+  gap: 0 5px;
+}
+
+.div-pagination-wrapper .pagination-site-number-wrapper {
+  gap: 0 5px;
+}
+
+.pagination-site-number-wrapper .active {
+  background-color: $white;
+}
+
+.div-pagination-wrapper button,
+.pagination-placeholder {
+  width: 24px;
+  height: 24px;
+  background-color: unset;
+  border: unset;
+  color: $white;
+  border-radius: 4px;
+}
+
+.div-pagination-wrapper button.active,
+button:hover {
+  background-color: $white;
+  color: $black;
+  cursor: pointer;
+}
+
+.div-pagination-wrapper button.active {
+  cursor: unset;
+}
+
+.balance-dynamic {
+  max-width: 1820px;
+  cursor: auto;
+}
+
+@media (max-width: 576px) {
+  .balance-dynamic {
+    padding: 20px;
+  }
+
+  .table-pagination-wrapper button {
+    padding: 3px;
+  }
+}

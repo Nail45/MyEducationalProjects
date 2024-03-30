@@ -1,0 +1,90 @@
+@import '../styles/_variables.scss';
+@import '../styles/_fonts.scss';
+@import '../styles/_mixin.scss';
+
+.authorization {
+  max-width: 500px;
+  height: 366px;
+  border-radius: 50px;
+  padding: 50px 85px 50px 40px;
+  margin: 50px auto;
+  background-color: $grey7;
+}
+
+.header-title {
+  @include Work34;
+  text-align: center;
+}
+
+.header-form {
+  &__label {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    @include Ubuntu16;
+  }
+
+  &__label-login {
+    padding-bottom: 25px;
+  }
+
+  &__label-password {
+    padding-bottom: 30px;
+  }
+
+  &__text {
+    margin-right: 18px;
+  }
+
+  &__input {
+    max-width: 300px;
+    padding: 8px 10px 8px 16px;
+    border-radius: 7px;
+    border-color: $grey5;
+  }
+
+  &__input::placeholder {
+    color: $grey5;
+  }
+}
+
+.header-btn {
+  width: 83px;
+  height: 48px;
+  padding-top: 10px;
+  margin-left: 76px;
+  border-radius: 7px;
+}
+
+.login-invalid {
+  position: absolute;
+  // top: 40px;
+  bottom: 0;
+  display: none;
+  color: $red;
+  font-size: 12px;
+}
+
+@media (min-width: 320px) and (max-width: 576px) {
+  .authorization {
+    padding: 20px;
+  }
+
+  .header-form__label {
+    flex-direction: column;
+  }
+
+  .header-form__text {
+    margin-right: 0;
+    margin-bottom: 7px;
+  }
+
+  .header-title {
+    text-align: start;
+  }
+
+  .header-btn {
+    margin-left: 0;
+  }
+}

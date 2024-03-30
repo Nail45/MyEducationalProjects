@@ -1,0 +1,466 @@
+@import '../styles/_variables.scss';
+@import '../styles/_fonts.scss';
+@import '../styles/_mixin.scss';
+
+.about-card.drag-on {
+  .new-transfer,
+  .dynamic-link,
+  .transfer-history {
+    cursor: grab;
+  }
+
+  .transfer,
+  .transfer-history {
+    border-radius: 50px;
+    outline: 1px dashed $grey107;
+    outline-offset: 3px;
+  }
+}
+.data-account {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+  gap: 50px;
+}
+
+.look-account__title {
+  margin-bottom: 30px;
+  @include Work34;
+}
+
+.look-account__number {
+  @include Work34;
+  font-weight: 400;
+}
+
+.back-account {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.back-account__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 33px;
+  width: 209px;
+  height: 52px;
+}
+
+.back-account__link::before {
+  content: '';
+  display: block;
+  margin-right: 14px;
+  width: 24px;
+  height: 12px;
+  background-image: url('../assets/images/arrow-left.svg');
+  background-repeat: no-repeat;
+}
+
+.balance-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.balance-title {
+  @include Work20;
+  margin-right: 10px;
+}
+
+.balance-value {
+  @include Work20;
+  font-weight: 400;
+}
+
+.transfer-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.transfer {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.new-transfer {
+  padding: 25px 50px;
+  width: 100%;
+  // width: 606px;
+  min-height: 288px;
+  border-radius: 50px;
+  background-color: $grey7;
+
+  &__title {
+    margin-bottom: 25px;
+    @include Work20;
+  }
+}
+
+.dynamic {
+  // max-width: 684px;
+  // max-width: 885px;
+  min-height: 288px;
+  border-radius: 50px;
+  padding: 25px 50px 20px;
+  box-shadow: 0px 5px 20px 0px $shadow;
+  text-decoration: none;
+  cursor: pointer;
+
+  &-title {
+    @include Work20;
+  }
+
+  &-link {
+    max-width: 685px;
+  }
+}
+
+.form-transfer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__wrap {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  &__label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+  }
+
+  &__label::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 10px;
+    display: block;
+    width: 50px;
+    height: 44px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &__label.Mir::after {
+    background-image: url('../assets/images/mir-logo.png');
+  }
+
+  &__label.Mastercard::after {
+    background-image: url('../assets/images/mk-logo.png');
+  }
+
+  &__label.Visa::after {
+    background-image: url('../assets/images/visa-logo.png');
+  }
+
+  &__label.UnionPay::after {
+    background-image: url('../assets/images/union-pay-logo.png');
+  }
+
+  &__label.JCB::after {
+    background-image: url('../assets/images/jcb-logo.png');
+  }
+
+  &__field {
+    width: 300px;
+    height: 44px;
+    padding: 8px, 16px, 8px, 16px;
+    border-radius: 7px;
+    border: 1px solid $grey5;
+  }
+
+  &__field::placeholder {
+    @include Ubuntu16-400;
+    color: $grey107;
+  }
+
+  &__text {
+    margin-right: 18px;
+    white-space: nowrap;
+    @include Ubuntu16;
+    color: $black218;
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 70px;
+    width: 164px;
+    height: 52px;
+    border-radius: 7px;
+  }
+
+  &__btn::before {
+    content: '';
+    display: block;
+    margin-right: 12px;
+    width: 20px;
+    height: 16px;
+    background-image: url('../assets/images/email-icon.svg');
+    background-repeat: no-repeat;
+  }
+}
+
+.transfer-history {
+  display: block;
+  max-width: 1820px;
+  width: 100%;
+  padding: 25px 50px 60px;
+  border-radius: 56px;
+  background-color: $grey7;
+  text-decoration: none;
+  cursor: pointer;
+
+  &__title {
+    margin-bottom: 25px;
+    @include Work20;
+  }
+}
+
+.transfer-table {
+  width: 100%;
+
+  &__tr-head {
+    background-color: $primary;
+  }
+
+  &__th {
+    padding: 20px 50px;
+    @include Ubuntu20;
+    color: $white;
+  }
+
+  &__th:first-child {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+  }
+
+  &__th:last-child {
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+
+  &__tr-body {
+    border-bottom: 2px solid $blue10;
+  }
+
+  &__td {
+    padding: 20px 50px;
+    @include Ubuntu16-400;
+    color: $grey2;
+  }
+}
+
+.from,
+.to {
+  position: relative;
+}
+
+.from::after,
+.to::after {
+  content: '';
+  position: absolute;
+  display: block;
+  top: 0;
+  right: 10px;
+  width: 50px;
+  height: 100%;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.from.Mir::after,
+.to.Mir::after {
+  background-image: url('../assets/images/mir-logo.png');
+}
+
+.from.Mastercard::after,
+.to.Mastercard::after {
+  background-image: url('../assets/images/mk-logo.png');
+}
+
+.from.Visa::after,
+.to.Visa::after {
+  background-image: url('../assets/images/visa-logo.png');
+}
+
+.from.UnionPay::after,
+.to.UnionPay::after {
+  background-image: url('../assets/images/union-pay-logo.png');
+}
+
+.from.JCB::after,
+.to.JCB::after {
+  background-image: url('../assets/images/jcb-logo.png');
+}
+
+.amount-minus::before {
+  content: '- ';
+}
+
+.amount-minus {
+  color: $red;
+}
+
+.amount-plus::before {
+  content: '+ ';
+}
+
+.amount-plus {
+  color: $green;
+}
+
+.autoComplete_wrapper .form-transfer__field {
+  width: 300px;
+  height: 44px;
+  border-radius: 7px;
+  background-image: none;
+  border: 1px solid $grey5;
+  color: $black;
+}
+
+.autoComplete_wrapper .form-transfer__field::placeholder {
+  @include Ubuntu16-400;
+  color: $grey107;
+}
+
+.autoComplete_wrapper > .form-transfer__field:hover {
+  color: inherit;
+}
+
+.autoComplete_wrapper > .form-transfer__field:focus {
+  color: inherit;
+  border: none;
+}
+
+.autoComplete_wrapper > .form-transfer__field:focus::placeholder {
+  color: inherit;
+}
+
+#autoComplete {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.error-message {
+  position: absolute;
+  top: -30px;
+  right: 0;
+  display: none;
+  color: $red;
+}
+
+@media (max-width: 1439px) {
+  .transfer {
+    flex-direction: column;
+  }
+
+  .new-transfer {
+    width: 100%;
+    margin-bottom: 50px;
+
+    &__title {
+      text-align: center;
+    }
+  }
+
+  .dynamic-link {
+    max-width: 1360px;
+    width: 100%;
+  }
+
+  .transfer-history {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .transfer-table__td {
+    padding: 15px 15px;
+  }
+
+  .transfer-table__th {
+    padding: 15px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .transfer-table__tr-head {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+  }
+
+  .transfer-table__tr-body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .transfer-table__td {
+    padding: 10px 10px;
+  }
+
+  .transfer-table__th {
+    padding: 10px 10px;
+  }
+
+  .data-account {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .look-account {
+    margin-bottom: 10px;
+  }
+
+  .look-account__title {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .back-account {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
+
+  .balance-wrap {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .dynamic-link {
+    display: none;
+  }
+
+  .new-transfer {
+    margin-bottom: 0;
+  }
+
+  .form-transfer__label {
+    flex-direction: column;
+  }
+
+  .autoComplete_wrapper .form-transfer__field {
+    width: 200px;
+  }
+
+  .form-transfer__field {
+    width: 200px;
+  }
+
+  .form-transfer__btn {
+    margin-left: 0;
+  }
+}

@@ -1,0 +1,320 @@
+@import '../styles/_variables.scss';
+@import '../styles/_fonts.scss';
+@import '../styles/_mixin.scss';
+
+.main {
+  @include container;
+}
+
+.accounts {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.list-accounts {
+  display: grid;
+  grid-template-columns: repeat(3, 400px);
+  justify-content: center;
+  gap: 50px 70px;
+}
+
+.nav-list {
+  display: flex;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+  gap: 25px;
+}
+
+.nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(90px, 14.88vw, 134px);
+  // width: 134px;
+  height: 52px;
+  @include Ubuntu16;
+  color: $primary;
+  background-color: $white;
+}
+
+.nav-btn.active-now {
+  background-color: $blue218;
+}
+
+.sort-wrap {
+  display: flex;
+  max-width: 550px;
+}
+
+.sort-title {
+  margin-right: 35px;
+  margin-bottom: 0;
+  @include Work34;
+  white-space: nowrap;
+}
+
+.accounts-select-wrap {
+  position: relative;
+  width: 300px;
+}
+
+.accounts-select-wrap.deg::after {
+  transform: rotate(180deg);
+}
+
+.accounts-select {
+  position: relative;
+  padding: 8px 16px 8px 16px;
+  width: 300px;
+  height: 44px;
+  border: 1px solid $primary;
+  border-radius: 7px;
+  appearance: none;
+  @include Ubuntu16-400;
+  cursor: pointer;
+  outline: none;
+}
+
+.accounts-option:not(:first-child)::before {
+  content: '';
+  position: absolute;
+  right: 20px;
+  display: block;
+  width: 18px;
+  height: 14px;
+  background-image: url('../assets/images/selected.svg');
+}
+
+.add-account {
+  display: flex;
+  align-items: center;
+  position: relative;
+  @include Ubuntu16;
+}
+
+.add-account__error {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  display: none;
+  color: $red;
+}
+
+.add-account::before {
+  content: '';
+  display: block;
+  margin-right: 10px;
+  width: 24px;
+  height: 24px;
+  background-image: url('../assets/images/plus.svg');
+}
+
+.account-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 22px;
+  max-width: 700px;
+  // max-width: 400px;
+  min-height: 156px;
+  border-radius: 9px;
+  box-shadow: 0px 5px 20px 0px $shadow;
+  cursor: grab;
+}
+
+.account-number {
+  margin-bottom: 9px;
+  @include Roboto18;
+  color: $black218;
+}
+
+.account-balance {
+  @include Ubuntu14-400;
+  color: $black218;
+}
+
+.account-transaction {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__text {
+    @include Work16;
+  }
+
+  &__time {
+    @include Work13;
+  }
+}
+
+.account-open {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 110px;
+  height: 52px;
+  border-radius: 7px;
+}
+
+.choices {
+  border: 1px solid $primary;
+  border-radius: 7px;
+}
+
+.choices__inner {
+  background-color: $white !important;
+}
+
+.is-open .choices__list--dropdown,
+.is-open .choices__list[aria-expanded] {
+  margin-top: 2px;
+  border: none;
+  border-radius: 7px;
+  box-shadow: 0 5px 20px 0 $shadow;
+}
+
+.choices__list--dropdown .choices__item--selectable.is-highlighted,
+.choices__list[aria-expanded] .choices__item--selectable.is-highlighted {
+  background-color: $blue218 !important;
+}
+
+.choices__item {
+  position: relative;
+}
+
+.is-selected {
+  background-image: url('../assets/images/selected.svg');
+  background-repeat: no-repeat;
+  background-position: 260px;
+}
+
+.skeleton {
+  position: relative;
+  cursor: default;
+}
+
+.skeleton::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background-image: linear-gradient(
+    90deg,
+    $grey238 0,
+    $grey238 40%,
+    $grey221 50%,
+    $grey221 55%,
+    $grey238 65%,
+    $grey238 100%
+  );
+  background-size: 400%;
+  animation: skeleton 1500ms infinite;
+}
+
+@keyframes skeleton {
+  from {
+    background-position: 100% 100%;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+
+@media (max-width: 1439px) {
+  .main {
+    @include containerMobile;
+  }
+  .list-accounts {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .accounts {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .account-card {
+    max-width: 576px;
+    padding: 15px;
+
+    > div:first-child {
+      margin-bottom: 10px;
+    }
+
+    &-transaction {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    &-transaction__wrap {
+      margin-bottom: 15px;
+    }
+  }
+
+  .sort-wrap {
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .nav-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .nav-btn,
+  .account-open {
+    width: 90px;
+    height: 40px;
+  }
+
+  .sort-wrap {
+    flex-direction: column;
+  }
+
+  .sort-title {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .accounts-select {
+    width: 213px;
+
+    &-wrap::after {
+      left: 180px;
+    }
+  }
+
+  .accounts-select-wrap {
+    width: 250px;
+  }
+
+  .is-selected {
+    background-position: 215px;
+  }
+
+  .list-accounts {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .account-open {
+    @include Ubuntu16;
+  }
+}

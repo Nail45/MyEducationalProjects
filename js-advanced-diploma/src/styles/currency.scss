@@ -1,0 +1,357 @@
+@import '../styles/_variables.scss';
+@import '../styles/_mixin.scss';
+
+.currencies {
+  &-yours {
+    padding: 50px;
+    // width: 588px;
+    width: 100%;
+    min-height: 411px;
+    user-select: none;
+    cursor: auto;
+  }
+
+  &-exchange {
+    padding: 50px 50px 62px;
+    // max-width: 588px;
+    width: 100%;
+    min-height: 273px;
+    user-select: none;
+    cursor: auto;
+  }
+
+  &-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    gap: 50px;
+    max-width: 885px;
+    width: 100%;
+  }
+
+  &-yours__wrap {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+  }
+
+  &-yours__title {
+    margin-bottom: 25px;
+    @include Work20;
+  }
+}
+
+.currencies.drag-on {
+  .currencies-yours,
+  .currencies-exchange,
+  .currencies-rate {
+    cursor: grab;
+  }
+
+  .currencies-wrap,
+  .currencies-rate {
+    border-radius: 50px;
+    outline: 1px dashed $grey107;
+    outline-offset: 3px;
+  }
+}
+
+.title {
+  margin-bottom: 56px;
+  display: inline-block;
+  @include Work34;
+}
+
+.your-currencies {
+  &__table {
+    width: 100%;
+  }
+
+  &__curr {
+    display: contents;
+    @include Work20-600;
+    color: $black;
+  }
+
+  &__value {
+    @include Work20-400;
+    width: 100%;
+    text-align: right;
+    vertical-align: bottom;
+    padding: 6px 0 6px 6px;
+    color: $black;
+  }
+
+  &__value-cell {
+    position: relative;
+    display: inline-block;
+    vertical-align: bottom;
+    width: 100%;
+  }
+
+  &__value-cell::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 20px;
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    border-bottom: 1px dashed $black;
+  }
+
+  &__cell-text {
+    position: relative;
+    padding-left: 8px;
+    z-index: 1;
+    background-color: $white;
+  }
+}
+
+.field {
+  width: 134px;
+  height: 44px;
+  padding: 8px 16px 8px 16px;
+  border-radius: 7px;
+  border: 1px solid $grey5;
+  appearance: none;
+}
+
+.form-exchange {
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+
+  &__curr {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+  }
+
+  &__value {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  &__label {
+    @include Ubuntu16;
+    margin-right: 20px;
+  }
+
+  &__error {
+    position: absolute;
+    top: 48px;
+    left: 73px;
+    display: none;
+    color: $red;
+  }
+
+  &__form {
+    margin-right: 20px;
+  }
+
+  &__input {
+    max-width: 300px;
+    width: 100%;
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.btn-switchs-drag {
+  @include Work20-400;
+  margin-left: 30px;
+}
+
+.currencies-rate {
+  position: relative;
+  padding: 50px 50px 79px;
+  // width: 703px;
+  max-width: 885px;
+  width: 100%;
+  min-height: 728px;
+  max-height: 990px;
+  border-radius: 50px;
+  background-color: $grey229;
+  overflow: hidden;
+  user-select: none;
+
+  &__table {
+    display: block;
+    width: 100%;
+    max-height: 823px;
+    overflow: hidden;
+  }
+
+  &__head {
+    padding: 8px 0;
+    // width: 50%;
+    width: 785px;
+    @include Work20-600;
+    color: $black;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  &__head-content {
+    position: relative;
+    display: inline-block;
+    vertical-align: bottom;
+    width: 100%;
+  }
+
+  &__head-content::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 20px;
+    position: absolute;
+    left: -20px;
+    bottom: 5px;
+    border-bottom: 1px dashed $black;
+  }
+
+  &__head-content.green::after {
+    border-color: $green;
+  }
+
+  &__head-content.red::after {
+    border-color: $red;
+  }
+
+  &__head-content.black::after {
+    border-color: $black;
+  }
+
+  &__head-text {
+    padding-right: 12px;
+    position: relative;
+    z-index: 1;
+    background-color: $grey229;
+  }
+
+  &__data {
+    width: 10%;
+    padding: 4px 0 4px 12px;
+    @include Work20-400;
+    text-align: left;
+    vertical-align: bottom;
+    color: $black;
+  }
+
+  &__data-text {
+    position: relative;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    max-height: 40px;
+    word-break: break-word;
+    margin-left: -25px;
+  }
+
+  &__data-text.green::after,
+  &__data-text.red::after,
+  &__data-text.black::after {
+    content: '';
+    position: absolute;
+    top: 6px;
+    right: 0;
+    display: block;
+    width: 20px;
+    height: 10px;
+    background-image: url('../assets/images/green-arrow.svg');
+  }
+
+  &__data-text.red::after {
+    background-image: url('../assets/images/red-arrow.svg');
+  }
+
+  &__data-text.black::after {
+    background-image: none;
+  }
+
+  .currencies-rate__tBody-error {
+    color: $red;
+  }
+}
+
+@media (max-width: 1250px) {
+  .currencies-yours__wrap {
+    flex-direction: column;
+    align-items: center;
+  }
+  .form-exchange {
+    justify-content: flex-start;
+  }
+
+  .currencies-rate {
+    height: 728px;
+
+    &__table {
+      max-height: 590px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .currencies-exchange,
+  .currencies-rate {
+    padding: 30px 25px;
+  }
+}
+
+@media (max-width: 576px) {
+  .form-exchange,
+  .form-exchange__curr {
+    flex-direction: column;
+    align-items: flex-start;
+
+    &__value {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+
+    &__error {
+      top: 60px;
+      left: 0;
+    }
+  }
+
+  .currencies-rate__data-text {
+    margin-left: -45px;
+  }
+
+  .currencies-rate__head-content::after {
+    left: -40px;
+  }
+}
+
+.gu-mirror {
+  position: fixed !important;
+  margin: 0 !important;
+  z-index: 9999 !important;
+  opacity: 0.8;
+  -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=80)';
+  filter: alpha(opacity=80);
+}
+.gu-hide {
+  display: none !important;
+}
+.gu-unselectable {
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+.gu-transit {
+  opacity: 0.2;
+  -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=20)';
+  filter: alpha(opacity=20);
+}
